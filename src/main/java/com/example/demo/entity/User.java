@@ -19,6 +19,14 @@ public class User implements Serializable{
 	private Integer userId;
     @Column
     private String userName;
+    @Column
+    private String Company;
+    @Column
+    private String Position;
+    @Column
+    private String Location;
+    @Column
+    private String Response;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Skill> skills= new LinkedList<>();
 
@@ -29,9 +37,36 @@ public class User implements Serializable{
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
+    public String getCompany() {
+        return Company;
+    }
 
+    public void setCompany(String userName) {
+        this.Company = Company;
+    }
+    public String getResponse() {
+        return Response;
+    }
+
+    public void setResponse(String Response) {
+        this.Response = Response;
+    }
+    public String getPosition() {
+        return Position;
+    }
+
+    public void setPosition(String Position) {
+        this.Position = Position;
+    }
+    public String getLocation() {
+        return Position;
+    }
+
+    public void setLocation(String Location) {
+        this.Location = Location;
+    }
     public String getUserName() {
-        return userName;
+        return Location;
     }
 
     public void setUserName(String userName) {
