@@ -3,27 +3,25 @@ package com.example.demo.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by ashish on 13/5/17.
- */
+
 public class UserDto {
     String Response;
     String Position;
 	Integer userId;
-    String userName;
     String Company;
     String Location;
     String Date;
-    List<SkillDto> skillDtos= new ArrayList<>();
+ 
+    String Site;
 
-    public UserDto(Integer userId, String userName,String Company,String Response,String Position, List<SkillDto> skillDtos) {
+    public UserDto(Integer userId,String Company,String Response,String Position, String Location, String Date,String Site) {
         this.userId = userId;
-        this.userName = userName;
-        this.skillDtos = skillDtos;
         this.Company = Company;
         this.Response = Response;
         this.Position = Position;
-
+        this.Location = Location;
+        this.Date = Date;
+        this.Site = Site;
     }
 
     public UserDto() {
@@ -48,7 +46,7 @@ public class UserDto {
         this.Position = Position;
     }
     public String getLocation() {
-        return Position;
+        return Location;
     }
 
     public void setLocation(String Location) {
@@ -58,25 +56,24 @@ public class UserDto {
         this.userId = userId;
     }
 
-    public String getUserName() {
-        return userName;
+    public void setDate(String Date) {
+        this.Date = Date;
     }
-
+    public String getDate() {
+        return Date;
+    }
+    
     public void setCompany(String Company) {
         this.Company = Company;
     }
     public String getCompany() {
         return Company;
     }
+    public void setSite(String Site) {
+        this.Site = Site;
+    }
+    public String getSite() {
+        return Site;
+    }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-    public List<SkillDto> getSkillDtos() {
-        return skillDtos;
-    }
-
-    public void setSkillDtos(List<SkillDto> skillDtos) {
-        this.skillDtos = skillDtos;
-    }
 }

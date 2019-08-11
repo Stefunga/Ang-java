@@ -5,21 +5,15 @@ import java.util.stream.Collectors;
 import com.example.demo.dto.UserDto;
 import com.example.demo.entity.User;
 
-/**
- * Created by ashish on 13/5/17.
- */
+
 public class UserConverter {
 	public static User dtoToEntity(UserDto userDto) {
-		User user = new User(userDto.getUserName(), null);
-		user.setUserId(userDto.getUserId());
-		user.setCompany(userDto.getCompany());
-		user.setSkills(userDto.getSkillDtos().stream().map(SkillConverter::dtoToEntity).collect(Collectors.toList()));
+		User user = new User(userDto.getPosition(),userDto.getLocation(),userDto.getCompany(),userDto.getDate(),userDto.getResponse(),userDto.getSite());
 		return user;
 	}
 
 	public static UserDto entityToDto(User user) {
-		UserDto userDto = new UserDto(user.getUserId(), user.getUserName(),user.getCompany(),user.getResponse(),user.getPosition(), null);
-		userDto.setSkillDtos(user.getSkills().stream().map(SkillConverter::entityToDto).collect(Collectors.toList()));
+		UserDto userDto = new UserDto(user.getUserId(), user.getCompany(),user.getResponse(),user.getPosition(),user.getLocation(), user.getDate(),user.getSite());
 		return userDto;
 	}
 }

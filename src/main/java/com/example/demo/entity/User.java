@@ -27,9 +27,11 @@ public class User implements Serializable{
     private String Location;
     @Column
     private String Response;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Skill> skills= new LinkedList<>();
-
+    @Column
+	private String Date;
+    @Column
+  	private String Site;
+    
     public Integer getUserId() {
         return userId;
     }
@@ -41,7 +43,7 @@ public class User implements Serializable{
         return Company;
     }
 
-    public void setCompany(String userName) {
+    public void setCompany(String Company) {
         this.Company = Company;
     }
     public String getResponse() {
@@ -59,33 +61,43 @@ public class User implements Serializable{
         this.Position = Position;
     }
     public String getLocation() {
-        return Position;
+        return Location;
     }
 
     public void setLocation(String Location) {
         this.Location = Location;
     }
     public String getUserName() {
-        return Location;
+        return userName;
     }
 
     public void setUserName(String userName) {
         this.userName = userName;
     }
+    
+	public String getDate() {
+		return Date;
+	}
 
-    public List<Skill> getSkills() {
-        return skills;
-    }
+	public void setDate(String date) {
+		Date = date;
+	}
+	public String getSite() {
+		return Site;
+	}
 
-    public void setSkills(List<Skill> skills) {
-        this.skills = skills;
-    }
-
+	public void setSite(String site) {
+		Site = site;
+	}
     public User() {
     }
 
-    public User(String userName, List<Skill> skills) {
-        this.userName = userName;
-        this.skills = skills;
+    public User(String Position,String Location,String Company,String Date, String Response, String Site) {
+    	 this.Position = Position;
+    	 this.Response = Response;
+    	 this.Company = Company;
+    	 this.Location = Location;
+    	 this.Date = Date;
+    	 this.Site = Site;
     }
 }

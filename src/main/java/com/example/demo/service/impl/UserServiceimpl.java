@@ -11,9 +11,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by ashish on 13/5/17.
- */
 @Service
 public class UserServiceimpl implements UserService {
 	@Autowired
