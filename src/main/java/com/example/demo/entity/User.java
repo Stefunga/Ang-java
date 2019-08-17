@@ -18,8 +18,6 @@ public class User implements Serializable{
 	@Id
 	private Integer userId;
     @Column
-    private String userName;
-    @Column
     private String Company;
     @Column
     private String Position;
@@ -67,14 +65,7 @@ public class User implements Serializable{
     public void setLocation(String Location) {
         this.Location = Location;
     }
-    public String getUserName() {
-        return userName;
-    }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-    
 	public String getDate() {
 		return Date;
 	}

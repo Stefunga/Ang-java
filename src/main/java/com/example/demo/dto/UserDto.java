@@ -5,14 +5,13 @@ import java.util.List;
 
 
 public class UserDto {
-    String Response;
-    String Position;
-	Integer userId;
-    String Company;
-    String Location;
-    String Date;
- 
-    String Site;
+    public String Response;
+    public String Position;
+    public Integer userId;
+    public String Company;
+    public String Location;
+    public String Date;
+    public String Site;
 
     public UserDto(Integer userId,String Company,String Response,String Position, String Location, String Date,String Site) {
         this.userId = userId;

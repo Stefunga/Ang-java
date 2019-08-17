@@ -8,6 +8,7 @@ import com.example.demo.entity.User;
 
 public class UserConverter {
 	public static User dtoToEntity(UserDto userDto) {
+		System.out.printf("%nIn this area2"+userDto.Company);
 		User user = new User(userDto.getPosition(),userDto.getLocation(),userDto.getCompany(),userDto.getDate(),userDto.getResponse(),userDto.getSite());
 		return user;
 	}
