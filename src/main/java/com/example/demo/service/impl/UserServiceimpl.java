@@ -23,9 +23,16 @@ public class UserServiceimpl implements UserService {
 
 	@Override
 	public void saveUser(UserDto userDto) {
+		System.out.printf("%nthis is inside");
+
 		userRepository.save(UserConverter.dtoToEntity(userDto));
 	}
-
+	
+	@Override
+	public void updateUser(UserDto userDto) {
+		System.out.printf("%nthis is inside");
+		userRepository.save(UserConverter.dtoToEntity(userDto));
+	}
 	@Override
 	public List<UserDto> getAllUsers() {
 		return userRepository.findAll().stream().map(UserConverter::entityToDto).collect(Collectors.toList());

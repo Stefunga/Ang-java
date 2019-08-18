@@ -14,6 +14,8 @@ public class UserConverter {
 	}
 
 	public static UserDto entityToDto(User user) {
+		System.out.print("Hi guys1"+user.getCompany());
+
 		UserDto userDto = new UserDto(user.getUserId(), user.getCompany(),user.getResponse(),user.getPosition(),user.getLocation(), user.getDate(),user.getSite());
 		return userDto;
 	}

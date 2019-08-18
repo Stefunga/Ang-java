@@ -35,4 +35,16 @@ public class UserController {
 		System.out.print("Hi guys"+userDto.getCompany());
 		userService.saveUser(userDto);
 	}
+	@RequestMapping(value= Constants.UPDATE_USER, method= RequestMethod.POST)
+	public void updateUser(@RequestBody UserDto userDto) {
+		System.out.print("Hi guys");
+		UserDto updateUser= userService.getUserById(userDto.getUserId());
+		updateUser.setCompany(userDto.getCompany());
+		updateUser.setDate(userDto.getDate());
+		updateUser.setSite(userDto.getSite());
+		updateUser.setResponse(userDto.getResponse());
+		updateUser.setLocation(userDto.getLocation());
+		updateUser.setPosition(userDto.getPosition());
+
+	}
 }
