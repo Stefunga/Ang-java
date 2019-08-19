@@ -8,13 +8,13 @@ import com.example.demo.entity.User;
 
 public class UserConverter {
 	public static User dtoToEntity(UserDto userDto) {
-		System.out.printf("%nIn this area2"+userDto.Company);
+		System.out.printf("%nthis is dtoToEntity"+userDto.Company);
 		User user = new User(userDto.getPosition(),userDto.getLocation(),userDto.getCompany(),userDto.getDate(),userDto.getResponse(),userDto.getSite());
 		return user;
 	}
 
 	public static UserDto entityToDto(User user) {
-		System.out.print("Hi guys1"+user.getCompany());
+		System.out.printf("%nthis is entityToDto"+user.getCompany());
 
 		UserDto userDto = new UserDto(user.getUserId(), user.getCompany(),user.getResponse(),user.getPosition(),user.getLocation(), user.getDate(),user.getSite());
 		return userDto;

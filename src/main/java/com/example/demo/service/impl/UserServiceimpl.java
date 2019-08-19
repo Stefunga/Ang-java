@@ -2,6 +2,7 @@ package com.example.demo.service.impl;
 
 import com.example.demo.converter.UserConverter;
 import com.example.demo.dto.UserDto;
+import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 
@@ -10,6 +11,9 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
 public class UserServiceimpl implements UserService {
@@ -23,14 +27,17 @@ public class UserServiceimpl implements UserService {
 
 	@Override
 	public void saveUser(UserDto userDto) {
-		System.out.printf("%nthis is inside");
+		System.out.printf("%nthis is inside save user");
 
 		userRepository.save(UserConverter.dtoToEntity(userDto));
 	}
-	
+	@RequestMapping(value="/User",method=RequestMethod.DELETE)
+	public void deleteUser(@RequestParam Integer userId) {
+	    userRepository.deleteEmploye(userId);
+	    }
 	@Override
 	public void updateUser(UserDto userDto) {
-		System.out.printf("%nthis is inside");
+		System.out.printf("%nthis is inside update user");
 		userRepository.save(UserConverter.dtoToEntity(userDto));
 	}
 	@Override

@@ -10,4 +10,5 @@ public interface UserService {
     void saveUser(UserDto userDto);
     List<UserDto> getAllUsers();
 	void updateUser(UserDto userDto);
+	void deleteUser(Integer userId);
 }
