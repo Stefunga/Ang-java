@@ -44,4 +44,11 @@ public class UserServiceimpl implements UserService {
 	public List<UserDto> getAllUsers() {
 		return userRepository.findAll().stream().map(UserConverter::entityToDto).collect(Collectors.toList());
 	}
+
+	@Override
+	public List<UserDto> getAllUsersTwoWeeks() {
+		// TODO Auto-generated method stub
+		return userRepository.findAll().stream().map(UserConverter::entityToDto).collect(Collectors.toList());
+
+	}
 }

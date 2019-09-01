@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,8 +26,8 @@ public class User implements Serializable{
     private String Location;
     @Column
     private String Response;
-    @Column
-	private String Date;
+    @Temporal(TemporalType.DATE)	
+    private LocalDate Date;
     @Column
   	private String Site;
     
@@ -66,11 +67,11 @@ public class User implements Serializable{
         this.Location = Location;
     }
 
-	public String getDate() {
+	public LocalDate getDate() {
 		return Date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(LocalDate date) {
 		Date = date;
 	}
 	public String getSite() {
@@ -83,7 +84,7 @@ public class User implements Serializable{
     public User() {
     }
 
-    public User(String Position,String Location,String Company,String Date, String Response, String Site) {
+    public User(String Position,String Location,String Company,LocalDate Date, String Response, String Site) {
     	 this.Position = Position;
     	 this.Response = Response;
     	 this.Company = Company;
