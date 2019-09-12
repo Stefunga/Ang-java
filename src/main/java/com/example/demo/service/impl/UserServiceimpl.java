@@ -6,6 +6,8 @@ import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,15 +42,19 @@ public class UserServiceimpl implements UserService {
 		System.out.printf("%nthis is inside update user");
 		userRepository.save(UserConverter.dtoToEntity(userDto));
 	}
-	@Override
-	public List<UserDto> getAllUsers() {
-		return userRepository.findAll().stream().map(UserConverter::entityToDto).collect(Collectors.toList());
-	}
 
-	@Override
-	public List<UserDto> getAllUsersTwoWeeks() {
+	public List<UserDto> getUsersByDate(String Date) {
 		// TODO Auto-generated method stub
-		return userRepository.findAll().stream().map(UserConverter::entityToDto).collect(Collectors.toList());
+		System.out.printf("%nThis IS IT");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+		LocalDate localDate = LocalDate.parse(Date, formatter);
+		return userRepository.getDateEmploye(localDate).stream().map(UserConverter::entityToDto).collect(Collectors.toList());
 
 	}
+	@Override
+	public List<UserDto> getAllUsers()  {
+		return userRepository.findAll().stream().map(UserConverter::entityToDto).collect(Collectors.toList());
+	
+	}
+
 }

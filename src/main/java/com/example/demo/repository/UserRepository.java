@@ -21,8 +21,6 @@ public interface UserRepository extends JpaRepository<User, Integer>{
     @Modifying
     @Query("delete from User e where e.userId=:x")
     public void deleteEmploye(@Param("x") Integer userId); 
-	List<UserDto> getAllUsersTwoWeeks(
-		      LocalDate TimeStart,
-		      LocalDate TimeEnd);
-
+    @Query("SELECT e FROM User e  where e.Date=:x") 
+	public List<User> getDateEmploye(@Param("x") LocalDate Date); 
 }

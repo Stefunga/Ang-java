@@ -29,6 +29,12 @@ public class UserController {
 	public List<UserDto> getAllUsers() {
 		return userService.getAllUsers();
 	}
+	@RequestMapping(Constants.GET_USER_BY_Date)
+	public List<UserDto> getUsersByDate(@PathVariable String Date) {
+		System.out.printf("%nThisisitttttt");
+		return userService.getUsersByDate(Date);
+	}
+	
 	
 	@RequestMapping(value= Constants.SAVE_USER, method= RequestMethod.POST)
 	public void saveUser(@RequestBody UserDto userDto) {

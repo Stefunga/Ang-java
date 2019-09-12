@@ -6,9 +6,7 @@ import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * Created by ashish on 13/5/17.
- */
+
 @Entity
 public class User implements Serializable{
 
@@ -26,7 +24,7 @@ public class User implements Serializable{
     private String Location;
     @Column
     private String Response;
-    @Temporal(TemporalType.DATE)	
+    @Column	
     private LocalDate Date;
     @Column
   	private String Site;
